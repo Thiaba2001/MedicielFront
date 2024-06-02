@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPage</title>
+    <link rel="stylesheet" href="Form.css">
+    <script src="https://kit.fontawesome.com/b806a01065.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Admin Access</h1>
+        </div>
+    </div>
+    <div class="flip_card">
+        <div class="flip_card_inner">
+            <div class="flip_card_front">
+                <form>
+                    <input type="text" placeholder="login">
+                    <input type="password" name="password" placeholder="password">
+                    <button class="btn1" type="button" onclick="redirectToDashboard()"> <i
+                            class="fa-solid fa-user-nurse"></i>
+                        Connexion
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToDashboard() {
+            window.location.href = "admin_dashboard.html";
+        }
+    </script>
+</body>
+
+</html>
