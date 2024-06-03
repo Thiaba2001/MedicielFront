@@ -23,16 +23,22 @@
     <div class="flip_card">
         <div class="flip_card_inner">
             <div class="flip_card_front">
-                <form onsubmit="">
+                <form form id="loginForm" onsubmit="return false">
 
                     <input type="text" placeholder="matricule">
                     <input type="text" name="password" placeholder="password">
-                    <button class="btn1" type="submit" onclick="flipCard()"> <i class="fa-solid fa-user-nurse"> </i>
+                    <button class="btn1" type="button" onclick="redirectToDoctorDashboard()"> <i
+                            class="fa-solid fa-user-nurse"> </i>
                         Connexion </button>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function redirectToDoctorDashboard() {
+            window.location.href = "MedicalRecords.html";
+        }
+    </script>
 
 </body>
 
