@@ -76,7 +76,27 @@ function readInfo(patientName, patientDiagnostic, patientPhone, patientDate) {
     document.getElementById("readPhone").value = patientPhone;
     document.getElementById("readDate").value = patientDate;
 
+    // Mettre à jour les attributs de data pour le bouton de téléchargement
+    document.querySelector('.btn-primary').setAttribute('data-name', patientName);
+    document.querySelector('.btn-primary').setAttribute('data-diagnostic', patientDiagnostic);
+    document.querySelector('.btn-primary').setAttribute('data-phone', patientPhone);
+    document.querySelector('.btn-primary').setAttribute('data-date', patientDate);
 }
+
+function downloadMedicalRecord() {
+    var patientName = document.querySelector('.btn-primary').getAttribute('data-name');
+    var patientDiagnostic = document.querySelector('.btn-primary').getAttribute('data-diagnostic');
+    var patientPhone = document.querySelector('.btn-primary').getAttribute('data-phone');
+    var patientDate = document.querySelector('.btn-primary').getAttribute('data-date');
+
+    var doc = new jsPDF();
+    doc.text(`Patient Name: ${patientName}`, 10, 10);
+    doc.text(`Patient Diagnostic: ${patientDiagnostic}`, 10, 20);
+    doc.text(`Patient Phone: ${patientPhone}`, 10, 30);
+    doc.text(`Creation Date: ${patientDate}`, 10, 40);
+    doc.save('medical_record.pdf');
+}
+
 function editInfo(index, patientName, patientDiagnostic, patientPhone, patientDate) {
     isEdit = true;
     editId = index;
